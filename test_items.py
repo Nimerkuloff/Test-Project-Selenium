@@ -12,7 +12,7 @@ def test_add_book_button_presents(browser):
     time.sleep(5)
 
     element = WebDriverWait(browser, 5).until(
-        EC.visibility_of_element_located((By.CSS_SELECTOR, '[type="submit"]'))
+        EC.visibility_of_element_located((By.CSS_SELECTOR, '[class="btn-add-to-basket"]'))
     )
 
     assert element.text != ""
