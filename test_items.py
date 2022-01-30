@@ -9,10 +9,7 @@ def test_add_book_button_presents(browser):
     link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
     browser.get(link)
 
-    time.sleep(30)
+    time.sleep(4)
 
-    element = WebDriverWait(browser, 30).until(
-        EC.visibility_of_element_located((By.CSS_SELECTOR, '[class="btn-add-to-basket"]'))
-    )
-
-    assert element.text != ""
+    element = browser.find_elements(By.CSS_SELECTOR, '.btn-add-to-basket')
+    assert len(element) != 0
